@@ -2,13 +2,15 @@ import express from 'express'
 import http from 'http'
 import Bundler from 'parcel-bundler'
 import path from 'path'
-import SocketIOServer from 'socket.io'
+// import SocketIOServer from 'socket.io'
+import { Server } from 'socket.io'
 
 import initializeSocketIO from './socket'
 
 const app = express()
 const server = new http.Server(app)
-const io = SocketIOServer(server)
+// const io = SocketIOServer(server)
+const io = new Server(server)
 const port = 8080 || process.env.PORT
 
 const bundler = new Bundler(path.join(__dirname, '../src/client/index.html'))
