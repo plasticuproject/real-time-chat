@@ -4,8 +4,10 @@ import Bundler from 'parcel-bundler'
 import path from 'path'
 // import SocketIOServer from 'socket.io'
 import { Server } from 'socket.io'
-
 import initializeSocketIO from './socket'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const app = express()
 const server = new http.Server(app)
