@@ -43,7 +43,7 @@ export default (io: Server) => {
     const { token = null } = socket.handshake.query || {}
     if (token) {
       try {
-        const [authType, tokenValue] = token.trim().split(' ') // token
+        const [authType, tokenValue] = token.trim().split(' ')
         if (authType !== 'Bearer') {
           throw new Error('Expected a Bearer token')
         }
